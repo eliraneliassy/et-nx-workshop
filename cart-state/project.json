@@ -1,0 +1,44 @@
+{
+  "name": "cart-state",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "cart-state/src",
+  "prefix": "etoro-workshop",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "cart-state/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "cart-state/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "cart-state/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "cart-state/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "cart-state/**/*.ts",
+          "cart-state/**/*.html",
+          "cart-state/package.json"
+        ]
+      }
+    }
+  }
+}

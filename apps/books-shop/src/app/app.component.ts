@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import {Observable} from "rxjs";
+import {AsyncPipe} from "@angular/common";
+import {CartService} from "@etoro/cart-state";
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, AsyncPipe],
   selector: 'etoro-workshop-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'books-shop';
+  cartService = inject(CartService);
+
+  numberOfItemsInCart$: Observable<number> = this.cartService.numberOfItemsInCart();
 }

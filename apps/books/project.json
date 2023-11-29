@@ -1,0 +1,44 @@
+{
+  "name": "books",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "prefix": "etoro-workshop",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "apps/books/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "apps/books/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "apps/books/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/books/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/books/**/*.ts",
+          "apps/books/**/*.html",
+          "apps/books/package.json"
+        ]
+      }
+    }
+  }
+}

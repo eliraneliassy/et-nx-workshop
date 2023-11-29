@@ -1,0 +1,12 @@
+<ng-container *ngIf="book">
+  <div class="title">
+    {{book.title}}
+  </div>
+
+  <img [src]="book.imageUrl">
+
+  <div class="price">{{book.price | currency}}</div>
+
+  <button (click)="addToCartHandler()">Add To Cart</button>
+  <button (click)="removeFromCartHandler()">Remove From Cart</button>
+</ng-container>

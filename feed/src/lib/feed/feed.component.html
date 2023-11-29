@@ -1,0 +1,4 @@
+<h2>Feed</h2>
+<ng-container *ngFor="let book of books$ | async">
+  <etoro-workshop-book [book]="book" (addToCart)="addToCart($event)"></etoro-workshop-book>
+</ng-container>

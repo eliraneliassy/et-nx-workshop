@@ -1,2 +1,9 @@
-<etoro-workshop-nx-welcome></etoro-workshop-nx-welcome>
+<h1>Welcome to our amazing books shop</h1>
+<h2>Items number of items in cart: {{numberOfItemsInCart$ | async}}</h2>
+<div class="links">
+  <div class="link">
+    <a routerLink="feed">Feed</a>
+    <a routerLink="cart">Cart</a>
+  </div>
+</div>
 <router-outlet></router-outlet>
