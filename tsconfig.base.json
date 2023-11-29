@@ -18,7 +18,8 @@
       "@etoro/books": ["apps/books/src/index.ts"],
       "@etoro/cart": ["cart/src/index.ts"],
       "@etoro/cart-state": ["cart-state/src/index.ts"],
-      "@etoro/feed": ["feed/src/index.ts"]
+      "@etoro/feed": ["feed/src/index.ts"],
+      "@etoro/ui": ["ui-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -12,6 +12,10 @@ import {CartService} from "@etoro/cart-state";
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+
+  constructor() {
+    // comment
+  }
   cartService = inject(CartService);
 
   numberOfItemsInCart$: Observable<number> = this.cartService.numberOfItemsInCart();
